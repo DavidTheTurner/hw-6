@@ -1,0 +1,64 @@
+\question{(B3.4)}{
+    Proposition 3.5 (Vol II) shows that for any continuous
+    bilinear map $\mapdef{f}{E_1\times E_2}{F}$,
+    for every $(a, b) \in E_1\times E_2$, the derivative
+    $\mathrm{D} f_{(a, b)}$ exists and is given by
+    \[
+        \mathrm{D} f_{(a, b)} (u, v) = f(u, b) + f(a, v),
+    \]
+    for all $(u, v) \in E_1\times E_2$.\\
+    \medskip
+    It can be shown (and you need not prove it, unless you decide to solve
+    the extra credit problem) that for any continuous multilinear map
+    $\mapdef{f}{E_1\times \cdots \times E_n}{F}$,
+    for any $(a_1, \ldots, a_n) \in E_1\times \cdots \times E_n$, the
+    derivative $\mathrm{D} f_{(a_1, \ldots, a_n)}$ exists and is given by
+    \begin{align*}
+        \mathrm{D} f_{(a_1, \ldots, a_n)} (u_1, \ldots,  u_n)  & =
+        f(u_1, a_2,  a_3, \ldots, a_n) +  f(a_1, u_2, a_3, \ldots, a_n) +
+        \cdots \\
+        & \quad + f(a_1, a_2, a_3, \ldots, a_{n-1}, u_n)  \\
+        & = \sum_{k = 1}^n f(a_1, \ldots, a_{k-1}, u_k, a_{k+1}, \ldots, a_n),
+    \end{align*}
+    for all $(u_1, \ldots, u_n) \in E_1\times \cdots \times E_n$.\\
+    \medskip
+    By definition, for every
+    $a = (a_1, \ldots, a_n) \in E_1\times \cdots \times E_n$,
+    the map $\mathrm{D} f_a$ is a continuous
+    linear map from $E_1\times \cdots \times E_n$ to $F$, namely,
+    $\mathrm{D} f_a \in \s{L}(E_1\times \cdots \times E_n,  F)$.
+    The map
+    $\mapdef{\mathrm{D} f}{E_1\times \cdots\times  E_n}
+    {\s{L}(E_1\times \cdots \times E_n,  F)}$
+    given by $a \mapsto \mathrm{D} f_a$ is
+    linear and continuous for $n = 2$,  but it is not linear for $n \geq
+    3$.
+    It is also not  multilinear for $n \geq 2$, but  it can still be
+    shown that  it is  continuous
+    (you need not prove it, unless you decide to solve
+    the extra credit problem).\\
+    \medskip
+    Using the above facts, prove (quickly, this is easy) that for {\it any\/} matrix
+    $A\in \mathrm{M}_n(\reals)$ and any matrix
+    $B\in \mathrm{M}_n(\reals)$, the derivative $d\det_A$ exists and is
+    given by
+    \begin{align*}
+        d\, \mathrm{det}_A (B)  & =
+        \det(B^1, A^2,  A^3, \ldots, A^n) +  \det(A^1, B^2, A^3, \ldots, A^n) +
+        \cdots \\
+        & \quad + \det(A^1, A^2, A^3, \ldots, A^{n-1}, B^n) \\
+        & = \sum_{k = 1}^n   \det(A^1, \ldots,A^{k-1}, B^k, A^{k+1},  \ldots, A^{n}),
+    \end{align*}
+    where $A^1, \ldots, A^n$ are the columns of $A$ and
+    $B^1, \ldots, B^n$ are the columns of $B$.
+    Furthermore, the map
+    $\mapdef{d\det}{\mathrm{M}_n(\reals)}{\s{L}(\mathrm{M}_n(\reals),\reals)}$
+    given by $A\mapsto d\det_A$
+    is continuous.\\
+    \medskip
+    Therefore,   $d\det_A$ exists even if $A$ is
+    not invertible, but we would like to find a more ``friendly''
+    and more explicit expression for it. There
+    such an explicit formula involving the adjugate matrix
+    $\widetilde{A}$ of $A$ from Section 6.4, Definition 6.9.
+}

@@ -1,0 +1,50 @@
+\question{(B5.2)}{
+    Prove that the matrix
+    \[
+        A =
+        \begin{pmatrix}
+            \transpos{X} X + K I_n & \transpos{X}\mathbf{1}_m\\
+            \transpos{\mathbf{1}_m} X& m
+        \end{pmatrix}
+    \]
+    is symmetric positive definite.
+    You can either use an argument involving a Schur complement
+    (Chapter 7 of Vol II, linalg-II),
+    or proceed as follows.\\
+    \medskip
+    Let $g$ be the function given by
+    \begin{align*}
+        g(w,b)  & =
+        \begin{pmatrix}
+            \transpos{w} & b
+        \end{pmatrix}
+        \begin{pmatrix}
+            \transpos{X} X + K I_n  & \transpos{X}\mathbf{1}_m \\
+            \transpos{\mathbf{1}_m} X & m
+        \end{pmatrix}
+        \begin{pmatrix}
+            w \\
+            b
+        \end{pmatrix} \\
+        & =
+        \transpos{w}(\transpos{X} X + K I_n) w +
+        2 \transpos{w} \transpos{X}\mathbf{1}_m b
+        +   \transpos{\mathbf{1}_m}\mathbf{1}_m b^2.
+    \end{align*}
+    Then
+    $A$ is symmetric positive definite iff
+    $(w, b) \not= 0$  implies that
+    $g(w, b) > 0$.
+    Prove that if $w\not= 0$ and $b = 0$,  then  $g(w, 0) > 0$.
+    If $b\not= 0$, for $b$ fixed
+    the function $w \mapsto g(w, b)$ is strictly convex
+    because $\transpos{X} X + K I_n$ is SPD, so it has a unique minimum
+    obtained by setting the gradient $\nabla_w g$ to $0$.
+    Find the value $w^*$ for which $\nabla_w g = 0$, and
+    compute the corresponding minimum value $g(w^*, b)$.
+    Prove that $g(w^*,b)$  is of the form $Tb^2$ and compute $T$
+    ($T$ happens to be
+    the Schur complement of $\transpos{X} X + K I_n$ in $A$).
+    Prove that $T> 0$, so that if $b\not= 0$, then $g(w^*, b) > 0$.
+    Deduce that $A$ is symmetric positive definite.
+}

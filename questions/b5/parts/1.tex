@@ -1,0 +1,31 @@
+\question{(B5.1)}{
+    This  problem can be solved directly
+    by computing the quadratic functional
+    $J(w, b) = \transpos{\xi} \xi  + K \transpos{w} w $ in terms of $w$ and $b$.
+    Prove that
+    \begin{align*}
+        J(w,b) & =
+        \begin{pmatrix}
+            \transpos{w} & b
+        \end{pmatrix}
+        \begin{pmatrix}
+            \transpos{X} X + K I_n  & \transpos{X}\mathbf{1}_m \\
+            \transpos{\mathbf{1}_m} X & m
+        \end{pmatrix}
+        \begin{pmatrix}
+            w \\
+            b
+        \end{pmatrix}
+        -
+        2
+        \begin{pmatrix}
+            \transpos{w} & b
+        \end{pmatrix}
+        \begin{pmatrix}
+            \transpos{X} y \\
+            \transpos{\mathbf{1}_m} y
+        \end{pmatrix}
+        +
+        \transpos{y}  y .
+    \end{align*}
+}

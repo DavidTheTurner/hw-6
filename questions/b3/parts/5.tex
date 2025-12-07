@@ -1,0 +1,58 @@
+\question{(B3.5 \emph{extra credit})}{
+    Prove that  for any continuous multilinear map
+    $\mapdef{f}{E_1\times \cdots \times E_n}{F}$,
+    for any $a = (a_1, \ldots, a_n) \in E_1\times \cdots \times E_n$, the
+    derivative $\mathrm{D} f_{(a_1, \ldots, a_n)}$ exists and is given by
+    \begin{align*}
+        \mathrm{D} f_{(a_1, \ldots, a_n)} (u_1, \ldots,  u_n)  & =
+        f(u_1, a_2,  a_3, \ldots, a_n) +  f(a_1, u_2, a_3, \ldots, a_n) +
+        \cdots \\
+        & \quad + f(a_1, a_2, a_3, \ldots, a_{n-1}, u_n)  \\
+        & = \sum_{k = 1}^n f(a_1, \ldots, a_{k-1}, u_k, a_{k+1}, \ldots, a_n),
+    \end{align*}
+    for all $u = (u_1, \ldots, u_n) \in E_1\times \cdots \times E_n$.\\
+    \medskip
+    \hint
+    Generalize the proof of Proposition 3.5 (Vol II).\\
+    \medskip
+    Prove that  $\mathrm{D} f$
+    (a map from $E_1\times \cdots \times E_n$ to
+    $\s{L}(E_1\times \cdots \times E_n, F)$)
+    is continuous.\\
+    \medskip
+    \hint
+    To prove that  $\mathrm{D} f$
+    is continuous, first observe that
+    $\mathrm{D} f$ is the sum of the $n$ functions
+    $(\mathrm{D} f)^1, \ldots,  (\mathrm{D} f)^n$,
+    with $(\mathrm{D} f)^k$ from $E_1\times \cdots \times E_n$ to
+    $\s{L}(E_1\times \cdots \times E_n, F)$ given by
+    \[
+        (\mathrm{D} f)^k_{(a_1, \ldots,a_n)}(u_1, \ldots, u_n) =
+        f(a_1, \ldots, a_{k-1}, u_k, a_{k+1}, \ldots, a_n).
+    \]
+    The function  $(\mathrm{D} f)^k$ is independent of the variable
+    $a_k$, so it is {\it not\/} multilinear, but
+    its restriction to
+    $E_1\times \cdots\times E_{k-1}\times E_{k+1}\times \cdots\times  E_n$
+    is $(n-1)$-multilinear, so if we can show that this restriction
+    is continuous, then
+    $(\mathrm{D} f)^k$ itself will be continuous.
+    To simplify notation, write
+    $\s{E}_k = E_1\times \cdots\times E_{k-1}\times E_{k+1}\times \cdots\times  E_n$.
+    We also  use the notation
+    $(\mathrm{D} f)^k$ to denote the restriction of
+    $(\mathrm{D} f)^k$ to $\s{E}_k$.\\
+    \medskip
+    Show that the   operator norm
+    $\norme{(\mathrm{D} f)^k}$ of the
+    restriction of $(\mathrm{D} f)^k$
+    to $\s{E}_k$
+    satisfies the inequality
+    \[
+        \norme{(\mathrm{D} f)^k} \leq \norme{f},
+    \]
+    where $\norme{f}$ is the norm of the
+    multilinear map $f$
+    (for norms of linear and multilinear maps, see Section 2.6, Vol. II).
+}

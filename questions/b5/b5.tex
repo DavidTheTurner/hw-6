@@ -1,0 +1,22 @@
+Consider the method of ridge regression
+to learn  an affine function
+$f(x) = \transpos{x} w + b$ instead of a linear function
+$f(x) = \transpos{x} w$, where $b\in\reals$.
+We have the following optimization program
+
+\medskip\noindent
+{\bf Program} $(\mathbf{RR3})$:
+%\index{ridge regression!$\mathbf{RR3}$}
+%
+\begin{align*}
+& \mathrm{minimize}     \quad  \transpos{\xi} \xi  + K \transpos{w} w \\
+& \mathrm{subject\ to} \\
+& \qquad\qquad  \quad y  - Xw - b\mathbf{1} = \xi,
+\end{align*}%
+with $y, \xi, \mathbf{1} \in \reals^m$ and $w\in \reals^n$.
+Note that in Program $(\mathbf{RR3})$ minimization is  performed over
+$\xi$, $w$ and $b$, but  $b$ is not penalized in the objective function.
+
+\import{b5/parts}{1.tex}
+\import{b5/parts}{2.tex}
+\import{b5/parts}{3.tex}

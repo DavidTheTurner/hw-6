@@ -1,0 +1,65 @@
+
+\makeatletter
+\def\question#1#2{%
+  \vspace{1em}%
+  \setlength{\fboxsep}{10pt}%
+  \noindent\fbox{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \textbf{#1}\par\vspace{0.5em}#2%
+    }%
+  }%
+  \par\vspace{1em}%
+}
+\makeatother
+
+\def\circled#1{\raisebox{.5pt}{\textcircled{\raisebox{.05pt}{\scriptsize\bfseries\textsc{#1}}}}}
+
+\newenvironment{proof2}{
+    \par\noindent
+    \begin{list}{}{\leftmargin=1em \rightmargin=1em}
+    \item[]
+}
+{\noindent\hfill$\blacksquare$\par\end{list}\newpage}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\def\prop#1{\emph{\textbf{Proposition #1}}}
+\def\theo#1{\emph{\textbf{Theorem #1}}}
+\def\norm#1{\left\lVert#1\right\rVert}
+
+% Gallier Macros
+\def\mapdef#1#2#3{#1\colon #2\rightarrow #3}
+\def\id{{\rm id}}
+\def\integs{\mathbb{Z}}
+\def\reals{\mathbb{R}}
+\def\hint{\noindent{\it Hint\/}.\enspace}
+\def\remark{\bigskip\noindent{\bf Remark:}\enspace}
+\def\transpos#1{#1^{\top}}
+\def\reals{\mathbb{R}}
+\def\complex{\mathbb{C}}
+\def\norme#1{\left\|#1\right\|}
+\def\novect#1{#1}
+\def\oldcases#1{\left\{\,\vcenter{\normalbaselines\matth
+  \ialign{$##\hfil$&\quad##\hfil\crcr#1\crcr}}\right.}
+\def\matth{\mathsurround=0pt}
+\def\amsbinvec#1#2{
+  \begin{pmatrix}
+  #1\\
+  #2\end{pmatrix}
+}
+\def\amsmata#1#2#3#4{
+  \begin{pmatrix}
+  #1 & #2 \\
+  #3 & #4
+  \end{pmatrix}
+}
+\def\amsmattc#1#2#3#4#5#6#7#8#9{
+  \begin{pmatrix}
+    #1 & #2 & #3 \\
+    #4 & #5 & #6 \\
+    #7 & #8 & #9
+  \end{pmatrix}
+}
+\def\ideal#1{\mfrac{#1}}
+\def\mfrac#1{{\mathfrak{#1}}}
+\def\s#1{{\cal #1}}

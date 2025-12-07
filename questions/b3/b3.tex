@@ -1,0 +1,41 @@
+Consider the determinant
+map, $\mapdef{f}{\mathbf{M}_n(\reals)}{\reals}$, given by
+\[
+    f(A) = \mathrm{det}(A), \quad A\in \mathbf{M}_n(\reals).
+\]
+
+For any matrix $B\in \mathrm{M}_n(\reals)$ (not necessarily invertible),
+let $\mapdef{\gamma}{\reals}{\mathbf{GL}(n,\reals)}$ be the
+function given by
+\[
+    \gamma(t) = e^{tB},\quad t\in \reals.
+\]
+Obviously, $\gamma(0) = I$. Geometrically, $\gamma$ defines a
+curve in the group $\mathbf{GL}(n,\reals)$ passing through $I$ at time
+$t = 0$.
+The function $\gamma$ is differentiable, and by using the power series
+defining $e^{tB}$ it is easily shown that
+\[
+    \gamma'(t) = Be^{tB},
+\]
+so $\gamma'(0) = B$. In other words, the curve $\gamma$ passes
+through $I$ with velocity $B$.
+{\bf You don't have to prove this fact}
+(Recall that when the domain space has dimension $1$, we write
+$\gamma'(t)  = d\gamma_1(t)$, the velocity vector at $t$.)
+
+
+\medskip
+Let $\mapdef{g}{\reals}{\reals}$ be the function given by
+\[
+    g(t) = \det(\gamma(t))  = \det(e^{tB}), \quad t\in \reals.
+\]
+
+\import{b3/parts}{1.tex}
+\import{b3/parts}{2.tex}
+\import{b3/parts}{3.tex}
+\import{b3/parts}{4.tex}
+\import{b3/parts}{5.tex}
+\import{b3/parts}{6.tex}
+\import{b3/parts}{7.tex}
+\import{b3/parts}{8.tex}

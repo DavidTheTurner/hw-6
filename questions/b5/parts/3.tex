@@ -1,0 +1,45 @@
+\question{(B5.3)}{
+    Prove that
+    the function $J(w, b)$  has a
+    unique minimum obtained by setting its gradient to zero, which yields
+    the system
+    \begin{equation*}
+        \begin{pmatrix}
+            \transpos{X} X + K I_n & \transpos{X}\mathbf{1}_m\\
+            \transpos{\mathbf{1}_m} X & m
+        \end{pmatrix}
+        \begin{pmatrix}
+            w \\
+            b
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \transpos{X} y \\
+            \transpos{\mathbf{1}_m} y
+        \end{pmatrix} .
+        \tag{$*_1$}
+    \end{equation*}\\
+    Prove that the solution $(w, b)$ of the above system
+    agrees with the solutions given by the system associated with the dual,
+    namely
+    \begin{equation*}
+        \begin{pmatrix}
+            X\transpos{X} + K I_m& \mathbf{1}_m \\
+            \transpos{\mathbf{1}_m} & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            \alpha \\
+            b
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            y \\
+            0
+        \end{pmatrix},
+        \tag{$*_2$}
+    \end{equation*}
+    with
+    \[
+        w = \transpos{X} \alpha.
+    \]
+}
