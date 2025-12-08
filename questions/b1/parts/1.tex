@@ -2,3 +2,53 @@
     Check that $\mathbf{SO}(n, 1)$ is indeed a group with the inverse of $A$  given by
     $A^{-1} = J\transpos{A}J$ (this is the {\it special Lorentz group\/}).
 }
+\begin{proof}
+    We can show that $\mathbf{SO}(n, 1)$ complies with the group axioms
+    \begin{itemize}
+        \item G1. $\mathbf{SO}(n, 1)$ is associative since matrices are associative
+        \item G2. We can see that $I_{n + 1}\in \mathbf{SO}(n, 1)$, since
+            \[
+                \transpos{I}_{n + 1}JI_{n + 1} = J
+            \]
+            and this is our identity element.
+        \item G3. To prove the provided equation is our inverse, we must first show
+            \begin{align*}
+                JJ & =
+                \begin{pmatrix}
+                    I_n & 0 \\
+                    0 & -1
+                \end{pmatrix}
+                \begin{pmatrix}
+                    I_n & 0 \\
+                    0 & -1
+                \end{pmatrix}
+                \\ & =
+                \begin{pmatrix}
+                    I_n & 0 \\
+                    0 & (-1)^2
+                \end{pmatrix}
+                \\ & =
+                \begin{pmatrix}
+                    I_n & 0 \\
+                    0 & 1
+                \end{pmatrix}
+                \\ & = I_{n + 1}
+            \end{align*}
+            and since $A\in\mathbf{GL}(n + 1, \reals)$, then $A^{-1}$ must exist. This means we can restate our original question
+            like so
+            \begin{align*}
+                \transpos{A}JA = J = (\transpos{A})^{-1}JA^{-1}.
+            \end{align*}
+            Now we can show that $A^{-1} = J\transpos{A}J$
+            \begin{align*}
+                A(J\transpos{A}J) & = A(J\transpos{A}(\transpos{A})^{-1}JA^{-1}) \tag{$J = (\transpos{A})^{-1}JA^{-1}$}
+                \\ & = A(JJA^{-1})
+                \\ & = AIA^{-1} \tag{$J^2 = I$}
+                \\ & = AA^{-1}
+                \\ & = I.
+            \end{align*}
+            So, $A^{-1} = J\transpos{A}J$.
+    \end{itemize}
+    Since $\mathbf{SO}(n, 1)$ meets all group axioms, we can conclude that it is a group.
+\end{proof}
+\newpage
