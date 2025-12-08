@@ -8,4 +8,14 @@ both  $\transpos{X} X + K I_n$ and
 $X\transpos{X}  + K I_m$  are invertible (because they are symmetric
 positive definite).
 
+\begin{proof}
+    \begin{align*}
+        (\transpos{X} X + K I_n)^{-1} \transpos{X}  & = (\transpos{X} X + K I_n)^{-1} \transpos{X} (X \transpos{X} + K I_m)(X \transpos{X} + K I_m)^{-1}
+        \\ & = (\transpos{X} X + K I_n)^{-1} (\transpos{X}X \transpos{X} + K\transpos{X})(X \transpos{X} + K I_m)^{-1}
+        \\ & = (\transpos{X} X + K I_n)^{-1} (\transpos{X}X + KI_{n})\transpos{X}(X \transpos{X} + K I_m)^{-1}
+        \\ & = I_n \transpos{X}(X \transpos{X} + K I_m)^{-1}
+        \\ & = \transpos{X}(X \transpos{X} + K I_m)^{-1}
+    \end{align*}
+\end{proof}
+
 \newpage
