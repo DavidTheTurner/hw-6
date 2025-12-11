@@ -19,3 +19,26 @@
     {\bf Remark: }
     Parts (1) and (2) can be used to prove that $\mathbf{SO}(n, 1)$ is a smooth manifold of dimension $\frac{n(n+1)}{2}$.
 }
+\begin{proof}
+    We'll claim that $dh_A(H) = \transpos{A}JH + \transpos{H}JA$, this gives us
+    \begin{align*}
+        \varepsilon(H)\norm{H} & = h(A + H) - h(A) - (\transpos{A}JH + \transpos{H}JA)
+        \\ & = \transpos{(A + H)}J(A + H) - J - (\transpos{A}JA - J) - (\transpos{A}JH + \transpos{H}JA)
+        \\ & = (\transpos{A} + \transpos{H})(JA + JH) - J - \transpos{A}JA + J - \transpos{A}JH - \transpos{H}JA
+        \\ & = \transpos{A}JA + \transpos{H}JA + \transpos{A}JH + \transpos{H}JH - J - \transpos{A}JA + J - \transpos{A}JH - \transpos{H}JA
+        \\ & = \transpos{H}JH.
+    \end{align*}
+    From here we can ascertain
+    \[
+        |\varepsilon(H)| \leq \norm{\frac{\transpos{H}JH}{\norm{H}}} \leq \frac{\norm{\transpos{H}}\norm{J}\norm{H}}{\norm{H}} = \norm{\transpos{H}}\norm{J} = \norm{H}\norm{J}
+    \]
+    and so
+    \[
+        \lim_{H \to \infty}\varepsilon(H) = 0
+    \]
+    and we can conclude that
+    \[
+        dh_A(H) = \transpos{A}JH + \transpos{H}JA
+    \]
+\end{proof}
+\newpage
