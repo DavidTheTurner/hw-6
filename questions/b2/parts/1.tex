@@ -6,3 +6,53 @@
         e^A = \cos \omega I + \frac{\sin \omega}{\omega} A.
     \]
 }
+\begin{proof}
+    \begin{align*}
+        A^0 & =
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix} \\
+        A^2 & =
+        \begin{pmatrix}
+            a^2 + cb & ab - ba \\
+            ca - ac & cb + a^2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            a^2 + cb & 0 \\
+            0 & a^2 + cb
+        \end{pmatrix}
+        = (a^2 + cb)
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix}
+        \\
+        A^3 & =
+        \begin{pmatrix}
+            a(a^2 + cb) & b(a^2 + cb) \\
+            c(a^2 + cb) & -a(a^2 + cb)
+        \end{pmatrix}
+        = (a^2 + cb)
+        \begin{pmatrix}
+            a & b \\
+            c & -a
+        \end{pmatrix}
+        \\
+        A^4 & = (a^2 + cb)^2
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix} \\
+        etc...
+    \end{align*}
+    It's clear that these matrices follow the familiar pattern of $e^A = \cos(\theta)I - \sin(\theta)J$, however, we have
+    a small issue in that the power for the $sin$ piece is incorrect for our power series. This can be remedied by
+    multiplying by $\frac{(a^2 + cb)}{(a^2 + cb)}$. This results in
+    \[
+        e^A = I + \frac{A^2}{2!} + \cdots + \frac{(a^2 + cb)}{(a^2 + cb)}\frac{A}{3!} + \cdots = \cos(a^2 + cb)I + \frac{\sin(a^2 + cb)}{(a^2 + cb)}A = \cos(\omega)I + \frac{\sin(\omega)}{\omega}A
+    \]
+    as desired.
+\end{proof}
+\newpage
