@@ -29,3 +29,35 @@
         \transpos{y}  y .
     \end{align*}
 }
+\begin{proof}
+    \begin{align*}
+        J(w, b) & = \transpos{\xi}\xi + K\transpos{w}w
+        \\ & = (\transpos{y} - \transpos{w}\transpos{X} - b\transpos{\mathbf{1}}_m)(y - Xw - b\mathbf{1}_m) + K\transpos{w}w
+        \\ & = (-1)(\transpos{w}\transpos{X} + b\transpos{\mathbf{1}}_m - \transpos{y})(-1)(Xw + b\mathbf{1}_m - y) + K\transpos{w}w
+        \\ & = (\transpos{w}\transpos{X} + b\transpos{\mathbf{1}}_m - \transpos{y})(Xw + b\mathbf{1}_m - y) + K\transpos{w}w
+        \\ & = \transpos{w}\transpos{X}Xw + \transpos{w}\transpos{X}\mathbf{1}_mb - \transpos{w}\transpos{X}y + b\transpos{\mathbf{1}}_mXw
+        + b^2\transpos{\mathbf{1}}_m\mathbf{1}_m - b\transpos{\mathbf{1}}_my - \transpos{y}Xw - b\transpos{y}\mathbf{1}_m
+        + \transpos{y}y + K\transpos{w}w
+        \\ & = \transpos{w}(\transpos{X}X + K\mathbf{I}_n)w + 2\transpos{w}\transpos{X}\mathbf{1}_mb - 2\transpos{w}\transpos{X}y - 2b\transpos{\mathbf{1}}_my
+        + b^2\transpos{\mathbf{1}}_m\mathbf{1}_m + \transpos{y}y
+        \\ & = \transpos{w}(\transpos{X}X + K\mathbf{I}_n)w + 2\transpos{w}\transpos{X}\mathbf{1}_mb - 2\transpos{w}\transpos{X}y - 2b\transpos{\mathbf{1}}_my
+        + b^2m + \transpos{y}y
+        \\ & =
+        \left(\transpos{w}\ b\right)
+        \begin{pmatrix}
+            \transpos{X}X + KI_n & \transpos{X}\mathbf{1}_m \\
+            \transpos{\mathbf{1}}_mX & m
+        \end{pmatrix}
+        \begin{pmatrix}
+            w \\
+            b
+        \end{pmatrix}
+        - 2\left(\transpos{w}\ b\right)
+        \begin{pmatrix}
+            \transpos{X}y \\
+            \transpos{\mathbf{1}}_m y
+        \end{pmatrix}
+        + \transpos{y}y
+    \end{align*}
+\end{proof}
+\newpage
