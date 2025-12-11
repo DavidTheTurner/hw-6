@@ -4,3 +4,56 @@
     \hint
     Use Part (1).
 }
+\begin{proof}
+    Let matrices $A$ and $B$ be defined as follows
+    \[
+        A = \begin{pmatrix}
+            0 & \frac{1}{15} \\
+            15 & 0
+        \end{pmatrix}
+        \quad
+        B = \begin{pmatrix}
+            0 & \frac{1}{71} \\
+            71 & 0
+        \end{pmatrix}.
+    \]
+    It is clear that $AB\ne BA$, since
+    \begin{align*}
+        AB = \begin{pmatrix}
+            0 & \frac{1}{15} \\
+            15 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            0 & \frac{1}{71} \\
+            71 & 0
+        \end{pmatrix}
+        = \begin{pmatrix}
+            0 & \frac{15}{71} \\
+            \frac{71}{15} & 0
+        \end{pmatrix}
+        \\
+        BA =
+        \begin{pmatrix}
+            0 & \frac{1}{71} \\
+            71 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            0 & \frac{1}{15} \\
+            15 & 0
+        \end{pmatrix}
+        = \begin{pmatrix}
+            0 & \frac{71}{15} \\
+            \frac{15}{71} & 0
+        \end{pmatrix}.
+    \end{align*}
+    Despite this, we can see that
+    \begin{align*}
+        e^Ae^B & = \left(\cos(0)I + \frac{sin(0)}{s}A\right)\left(\cos(0)I + \frac{sin(0)}{s}B\right)
+        \\ & = II
+        \\ & = \left(\cos(0)I + \frac{sin(0)}{s}B\right)\left(\cos(0)I + \frac{sin(0)}{s}A\right)
+        \\ & = e^Be^A
+        \\ & = e^{A + B}
+    \end{align*}
+    as desired.
+\end{proof}
+\newpage
