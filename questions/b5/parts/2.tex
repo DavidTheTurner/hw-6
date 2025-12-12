@@ -48,3 +48,42 @@
     Prove that $T> 0$, so that if $b\not= 0$, then $g(w^*, b) > 0$.
     Deduce that $A$ is symmetric positive definite.
 }
+\begin{proof}
+    Since A is symmetric, we can take A to be
+    \[
+        A =
+        \begin{pmatrix}
+            \transpos{X} X + K I_n & \transpos{X}\mathbf{1}_m\\
+            \transpos{\mathbf{1}_m} X& m
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            T & U \\
+            \transpos{U} & V
+        \end{pmatrix}
+    \]
+    and use the Schur complement to check if it is SPD. Let $B$ be the Schur complement of
+    $T$. We can then see
+    \begin{align*}
+        B & = V - \transpos{U}A^{-1}U
+        \\ & = m - \transpos{\mathbf{1}}_mX(\transpos{X}X + KI_n)^{-1}\transpos{X}\mathbf{1}_m
+        \\ & = \transpos{\mathbf{1}}_m\mathbf{1}_m - \transpos{\mathbf{1}}_mX(\transpos{X}X + KI_n)^{-1}\transpos{X}\mathbf{1}_m
+        \\ & = \transpos{\mathbf{1}}_m(I_m - X(\transpos{X}X + KI_n)^{-1}\transpos{X})\mathbf{1}_m
+    \end{align*}
+    and since we showed in B4 that
+    \[
+        (\transpos{X} X + K I_n)^{-1} \transpos{X}  =  \transpos{X} (X \transpos{X} + K I_m)^{-1}
+    \]
+    we can say
+    \begin{align*}
+        B & = \transpos{\mathbf{1}}_m(I_m - X(\transpos{X}X + KI_n)^{-1}\transpos{X})\mathbf{1}_m
+        \\ & = \transpos{\mathbf{1}}_m(I_m - X\transpos{X}(\transpos{X}X + KI_n)^{-1})\mathbf{1}_m
+        \\ & = \transpos{\mathbf{1}}_m(\transpos{X}X(\transpos{X}X + KI_n)^{-1} + KI_n(\transpos{X}X + KI_n)^{-1} - X\transpos{X}(\transpos{X}X + KI_n)^{-1})\mathbf{1}_m
+        \\ & = \transpos{\mathbf{1}}_m(KI_n(\transpos{X}X + KI_n)^{-1})\mathbf{1}_m
+        \\ & = \transpos{\mathbf{1}}_m(K(\transpos{X}X + KI_n)^{-1})\mathbf{1}_m.
+    \end{align*}
+    Since, we were given that $\transpos{X}X + KI_n$ is SPD in B4, then $B$ must also be SPD, since
+    $B = \transpos{\mathbf{1}}_m(K(\transpos{X}X + KI_n)^{-1})\mathbf{1}_m$. Finally, because $\transpos{X}X + KI_n$ and
+    $B$ are SPD, then by \prop{7.4} (Vol. II), $A$ is SPD as well.
+\end{proof}
+\newpage
