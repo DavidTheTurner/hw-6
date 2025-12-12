@@ -43,3 +43,110 @@
         w = \transpos{X} \alpha.
     \]
 }
+\begin{proof}
+    Since we proved in Part B5.2 that the matrix $A$ is SPD, then $J(w, b)$ is guaranteed to have a unique minimum by \prop{6.2} (Vol. II). We can then find
+    this minimum by setting $\nabla J(w, b) = 0$. Fully expanding out $J(w, b)$, we get
+    \[
+        J(w, b) = \transpos{w}(\transpos{X}X + K\mathbf{I}_n)w + 2\transpos{w}\transpos{X}\mathbf{1}_mb - 2\transpos{w}\transpos{X}y - 2b\transpos{\mathbf{1}}_my
+        + b^2m + \transpos{y}y.
+    \]
+    Taking the partial derivative with respect to $w$, we get
+    \[
+        \frac{\partial}{\partial w}J(w, b) = 2(\transpos{X}X + K\mathbf{I}_n)w + 2\transpos{X}\mathbf{1}_mb - 2\transpos{X}y
+    \]
+    then, taking the partial derivative with respect to $b$, we get
+    \begin{align*}
+        \frac{\partial}{\partial b}J(w, b) & = 2(\transpos{\mathbf{1}}_mXw) - 2(\transpos{\mathbf{1}}_my) + 2bm \tag{$2\transpos{w}\transpos{X}\mathbf{1}_mb = 2(\transpos{b}\transpos{\mathbf{1}}_mXw)$ since it's a scalar}
+        \\ & = 2(\transpos{\mathbf{1}}_mXw) + 2bm - 2(\transpos{\mathbf{1}}_my).
+    \end{align*}
+    This gives us our gradient
+    \[
+        \nabla J(w, b) =
+        \begin{pmatrix}
+            \frac{\partial}{\partial w}J(w, b) \\
+            \frac{\partial}{\partial b}J(w, b) \\
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            2(\transpos{X}X + K\mathbf{I}_n)w + 2\transpos{X}\mathbf{1}_mb - 2\transpos{X}y \\
+            2(\transpos{\mathbf{1}}_mXw) + 2bm - 2(\transpos{\mathbf{1}}_my)
+        \end{pmatrix}.
+    \]
+    Setting this to $0$, we arrive at the system
+    \begin{align*}
+        \begin{pmatrix}
+            2(\transpos{X}X + K\mathbf{I}_n)w + 2\transpos{X}\mathbf{1}_mb - 2\transpos{X}y \\
+            2(\transpos{\mathbf{1}}_mXw) + 2bm - 2(\transpos{\mathbf{1}}_my)
+        \end{pmatrix}
+        & = 0 \\
+        \begin{pmatrix}
+            (\transpos{X}X + K\mathbf{I}_n)w + \transpos{X}\mathbf{1}_mb  \\
+            (\transpos{\mathbf{1}}_mXw) + bm
+        \end{pmatrix}
+        -
+        \begin{pmatrix}
+            \transpos{X}y \\
+            \transpos{\mathbf{1}}_my
+        \end{pmatrix}
+        & = 0 \\
+        \begin{pmatrix}
+            (\transpos{X}X + K\mathbf{I}_n)w + \transpos{X}\mathbf{1}_mb  \\
+            (\transpos{\mathbf{1}}_mXw) + bm
+        \end{pmatrix}
+        & =
+        \begin{pmatrix}
+            \transpos{X}y \\
+            \transpos{\mathbf{1}}_my
+        \end{pmatrix} \\
+        \begin{pmatrix}
+            \transpos{X}X + K\mathbf{I}_n & \transpos{X}\mathbf{1}_m  \\
+            \transpos{\mathbf{1}}_mX &  m
+        \end{pmatrix}
+        \begin{pmatrix}
+            w \\
+            b
+        \end{pmatrix}
+        & =
+        \begin{pmatrix}
+            \transpos{X}y \\
+            \transpos{\mathbf{1}}_my
+        \end{pmatrix} \\
+    \end{align*}
+    Looking at each of these equations individually and using $w = \transpos{X}\alpha$, we find
+    \begin{align*}
+        (\transpos{X}X + K\mathbf{I}_n)w + \transpos{X}\mathbf{1}_mb & = \transpos{X}y \\
+        (\transpos{X}X + K\mathbf{I}_n)\transpos{X}\alpha + \transpos{X}\mathbf{1}_mb & = \transpos{X}y \\
+        \transpos{X}(X\transpos{X} + K\mathbf{I}_m)\alpha + \transpos{X}\mathbf{1}_mb & = \transpos{X}y \\
+        (X\transpos{X} + K\mathbf{I}_m)\alpha + \mathbf{1}_mb & = y \\
+    \end{align*}
+    and
+    \begin{align*}
+        \transpos{\mathbf{1}}_mXw + mb & = \transpos{\mathbf{1}}_my \\
+        \transpos{\mathbf{1}}_mX\transpos{X}\alpha + mb & = \transpos{\mathbf{1}}_my \\
+        \transpos{\mathbf{1}}_mX\transpos{X}\alpha + mb - \transpos{\mathbf{1}}_my & = 0 \\
+        \transpos{\mathbf{1}}_mX\transpos{X}\alpha + mb - \transpos{\mathbf{1}}_m((X\transpos{X} + K\mathbf{I}_n)\alpha + \mathbf{1}_mb) & = 0 \tag{Sub in $y$ from above} \\
+        \transpos{\mathbf{1}}_mX\transpos{X}\alpha + \transpos{\mathbf{1}}_m\mathbf{1}_mb - \transpos{\mathbf{1}}_m((X\transpos{X} + K\mathbf{I}_n)\alpha + \mathbf{1}_mb) & = 0 \\
+        \transpos{\mathbf{1}}_m(X\transpos{X}\alpha + \mathbf{1}_mb - (X\transpos{X} + K\mathbf{I}_n)\alpha - \mathbf{1}_mb) & = 0 \\
+        \transpos{\mathbf{1}}_m(X\transpos{X}\alpha + \mathbf{1}_mb - X\transpos{X}\alpha - K\mathbf{I}_n\alpha - \mathbf{1}_mb) & = 0 \\
+        \transpos{\mathbf{1}}_m(K\mathbf{I}_n\alpha) & = 0 \\
+        \transpos{\mathbf{1}}_m\alpha - 0(b) & = 0 \tag{Divide by constant $K$} \\
+    \end{align*}
+    Recombining gives us
+    \[
+        \begin{pmatrix}
+            X\transpos{X} + K I_m& \mathbf{1}_m \\
+            \transpos{\mathbf{1}_m} & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            \alpha \\
+            b
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            y \\
+            0
+        \end{pmatrix},
+    \]
+    as desired, which proves that the two systems agree.
+\end{proof}
+\newpage
