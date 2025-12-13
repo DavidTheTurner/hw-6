@@ -62,3 +62,17 @@
     such an explicit formula involving the adjugate matrix
     $\widetilde{A}$ of $A$ from Section 6.4, Definition 6.9.
 }
+\begin{proof}
+    Since the determinant is a continuous multilinear map, by the first fact above, the derivative
+    $d\,det_A$ must exist and is given by
+    \begin{align*}
+        d\, \mathrm{det}_A (B)  & =
+        \det(B^1, A^2,  A^3, \ldots, A^n) +  \det(A^1, B^2, A^3, \ldots, A^n) +
+        \cdots \\
+        & \quad + \det(A^1, A^2, A^3, \ldots, A^{n-1}, B^n) \\
+        & = \sum_{k = 1}^n   \det(A^1, \ldots,A^{k-1}, B^k, A^{k+1},  \ldots, A^{n}).
+    \end{align*}
+    where $A^1, \ldots, A^n$ are the columns of $A$ and $B^1, \ldots, B^n$ are the columns of $B$. Furthermore, by the second fact above, despite it losing its linear and multilinear properties, the
+    resulting $A\mapsto d\det_A$ is still continuous.
+\end{proof}
+\newpage
