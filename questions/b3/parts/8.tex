@@ -18,3 +18,19 @@
     The function $\log\det$ is a {\it barrier\/} function used in
     convex optimization.
 }
+\begin{proof}
+    We begin with the chain rule, and using the result of problem B3.7, we get
+    \begin{align*}
+        d\,\ell_A & = d\,log(det(A))\circ d\,det(A)
+        \\ & = \frac{1}{det(A)}tr(\widetilde{A}H)
+    \end{align*}
+    Plugging in $B$, we see
+    \begin{align*}
+        d\,\ell_A(B) & = \frac{1}{det(A)}tr(\widetilde{A}B)
+        \\ & = tr(\frac{1}{det(A)}\widetilde{A}B)
+        \\ & = tr(A^{-1}\widetilde{A}^{-1}\widetilde{A}B)
+        \\ & = tr(A^{-1}B)
+    \end{align*}
+    as desired.
+\end{proof}
+\newpage
