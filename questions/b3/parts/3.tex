@@ -11,4 +11,33 @@
     such that $\gamma(0) = A$ and $\gamma'(0) = B$ and
     use the chain rule.
 }
+\begin{proof}
+    Following a similar approach as in B3.1, we can define a new $\gamma$ so that
+    \[
+        \gamma(t) = Ae^{tA^{-1}B}.
+    \]
+    Then, by creating a new $g$ so that
+    \begin{align*}
+        g(t) & = det(Ae^{tA^{-1}B})
+        \\ & = det(A)e^{t(tr(A^{-1}B))}
+    \end{align*}
+    and Furthermore
+    \begin{align*}
+        g'(t) & = det(A)tr(A^{-1}B)e^{t(tr(A^{-1}B))}
+    \end{align*}
+    we can use our chain rule to show
+    \begin{align*}
+        (\det\circ\, \gamma)'(0) & = d\,\det(\gamma(0))\circ\ \gamma'(0)
+        \\ & = d\,\det(Ae^{0B})\circ\ (AA^{-1}Be^{0A^{-1}B})
+        \\ & = d\,\det(A)\circ\ B
+        \\ & = d\,\mathrm{det}_A(B)
+    \end{align*}
+    which aligns with our new $g$. So,
+    \begin{align*}
+        d\,\mathrm{det}_A(B) = g'(0) & = det(A)tr(A^{-1}B)e^{0(tr(A^{-1}B))}
+        \\ & = det(A)tr(A^{-1}B)I
+        \\ & = det(A)tr(A^{-1}B)
+    \end{align*}
+    as desired.
+\end{proof}
 \newpage
