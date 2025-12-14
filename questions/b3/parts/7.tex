@@ -19,3 +19,15 @@
     (not necessarily invertible)
     and any  matrix $B\in \mathrm{M}_n(\reals)$.
 }
+\begin{proof}
+    While $A$ is not guaranteed to be invertible, we know from part B3.6 that there is an invertible
+    matrix that is arbitrarily close to $A$, so using that as a stand in for $A$, we can get
+    \begin{align*}
+        d\,\mathrm{det}_A(B) &= \det(A)\mathrm{tr}(A^{-1}B)
+        \\ & = \det(A)\mathrm{tr}(\det(A)^{-1} \widetilde{A}B)
+        \\ & = \det(A)\det(A)^{-1}\mathrm{tr}(\widetilde{A}B)
+        \\ & = \mathrm{tr}(\widetilde{A}B)
+    \end{align*}
+    as desired.
+\end{proof}
+\newpage
