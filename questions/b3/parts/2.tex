@@ -9,3 +9,22 @@
     Use the fact that $\det(e^M) = e^{\mathrm{tr}(M)}$
     for any matrix $M\in \mathrm{M}_n(\reals)$.
 }
+\begin{proof}
+    Since we have show that $d\,\mathrm{det}_I(B) = (\det\circ\, \gamma)'(0) = g'(0)$ and we know that
+    \begin{align*}
+        g(t) & = det(e^{tB})
+        \\ & = e^{tr(tB)}
+        \\ & = e^{t(tr(B))}
+    \end{align*}
+    and so
+    \begin{align*}
+        g'(t) = tr(B)e^{t(tr(B))}
+    \end{align*}
+    then
+    \begin{align*}
+        d\,\mathrm{det}_I(B) = g'(0) & = tr(B)e^{0(tr(B))}
+        \\ & = tr(B)
+    \end{align*}
+    as desired.
+\end{proof}
+\newpage
