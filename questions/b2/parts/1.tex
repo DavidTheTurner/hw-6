@@ -13,6 +13,11 @@
             1 & 0 \\
             0 & 1
         \end{pmatrix} \\
+        A^1 & =
+        \begin{pmatrix}
+            a & b \\
+            c & -a
+        \end{pmatrix} \\
         A^2 & =
         \begin{pmatrix}
             a^2 + cb & ab - ba \\
@@ -47,12 +52,14 @@
         \end{pmatrix} \\
         etc...
     \end{align*}
-    It's clear that these matrices follow the familiar pattern of $e^A = \cos(\theta)I - \sin(\theta)J$, however, we have
+    Note that since $a^2 + bc < 0$, the sign alternates whenver $A$ is squared. It's clear that these matrices follow the familiar pattern of $e^A = \cos(\theta)I - \sin(\theta)J$, however, we have
     a small issue in that the power for the $sin$ piece is incorrect for our power series. This can be remedied by
     multiplying by $\frac{(a^2 + cb)}{(a^2 + cb)}$. This results in
-    \[
-        e^A = I + \frac{A^2}{2!} + \cdots + \frac{(a^2 + cb)}{(a^2 + cb)}\frac{A}{3!} + \cdots = \cos(a^2 + cb)I + \frac{\sin(a^2 + cb)}{(a^2 + cb)}A = \cos(\omega)I + \frac{\sin(\omega)}{\omega}A
-    \]
+    \begin{align*}
+        e^A & = (I - \frac{A^2}{2!} + \frac{A^4}{4!} + \cdots) + \frac{1}{(a^2 + cb)}((a^2 + cb)\frac{A}{1} - (a^2 + cb)\frac{A^3}{3!} + (a^2 + cb)(a^2 + cb)\frac{A^5}{5!} + \cdots)
+        \\ & = \cos(a^2 + cb)I + \frac{\sin(a^2 + cb)}{(a^2 + cb)}A
+        \\ & = \cos(\omega)I + \frac{\sin(\omega)}{\omega}A
+    \end{align*}
     as desired.
 \end{proof}
 \newpage
