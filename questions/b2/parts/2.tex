@@ -1,4 +1,4 @@
-\question{(B1.2)}{
+\question{(B2.2)}{
     Find two real $2\times 2$ matrices $A$ and $B$ such that $AB\not= BA$,
     yet $e^{A+B} = e^A e^B$.\\
     \hint
@@ -8,52 +8,54 @@
     Let matrices $A$ and $B$ be defined as follows
     \[
         A = \begin{pmatrix}
-            0 & \frac{1}{15} \\
+            0 & -\frac{\pi^2}{15} \\
             15 & 0
         \end{pmatrix}
         \quad
         B = \begin{pmatrix}
-            0 & \frac{1}{71} \\
+            0 & -\frac{\pi^2}{71} \\
             71 & 0
         \end{pmatrix}.
     \]
     It is clear that $AB\ne BA$, since
     \begin{align*}
         AB = \begin{pmatrix}
-            0 & \frac{1}{15} \\
+            0 & -\frac{\pi^2}{15} \\
             15 & 0
         \end{pmatrix}
         \begin{pmatrix}
-            0 & \frac{1}{71} \\
+            0 & -\frac{\pi^2}{71} \\
             71 & 0
         \end{pmatrix}
         = \begin{pmatrix}
-            0 & \frac{15}{71} \\
-            \frac{71}{15} & 0
+            0 & -\frac{15\pi^2}{71} \\
+            -\frac{71\pi^2}{15} & 0
         \end{pmatrix}
         \\
         BA =
         \begin{pmatrix}
-            0 & \frac{1}{71} \\
+            0 & -\frac{\pi^2}{71} \\
             71 & 0
         \end{pmatrix}
         \begin{pmatrix}
-            0 & \frac{1}{15} \\
+            0 & -\frac{\pi^2}{15} \\
             15 & 0
         \end{pmatrix}
         = \begin{pmatrix}
-            0 & \frac{71}{15} \\
-            \frac{15}{71} & 0
+            0 & -\frac{71\pi^2}{15} \\
+            -\frac{15\pi^2}{71} & 0
         \end{pmatrix}.
     \end{align*}
-    Despite this, we can see that
+    This results in our $w^2 = -(-\pi^2) = \pi^2$. Then we can see that
     \begin{align*}
-        e^Ae^B & = \left(\cos(0)I + \frac{sin(0)}{s}A\right)\left(\cos(0)I + \frac{sin(0)}{s}B\right)
+        e^Ae^B & = \left(\cos(\pi)I + \frac{sin(\pi)}{\pi}A\right)\left(\cos(0)I + \frac{sin(\pi)}{\pi}B\right)
+        \\ & = \left((-1)I + 0A\right)\left((-1)I + 0B\right)
         \\ & = II
-        \\ & = \left(\cos(0)I + \frac{sin(0)}{s}B\right)\left(\cos(0)I + \frac{sin(0)}{s}A\right)
+        \\ & = \left((-1)I + 0B\right)\left((-1)I + 0A\right)
+        \\ & = \left(\cos(\pi)I + \frac{sin(\pi)}{\pi}B\right)\left(\cos(\pi)I + \frac{sin(\pi)}{\pi}A\right)
         \\ & = e^Be^A
-        \\ & = e^{A + B}
+        \\ & = e^{A + B}.
     \end{align*}
-    as desired.
+    So, in spite of $AB \ne BA$, $e^Ae^B = e^{A + B}$ as desired.
 \end{proof}
 \newpage
